@@ -1,0 +1,197 @@
+html, body{
+    background-color: rgb(14, 71, 1);
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    overflow-x: hidden; /* Adicionado para garantir que nenhuma barra de rolagem horizontal apareça no body */
+    scroll-behavior: smooth;
+
+}
+
+::-webkit-scrollbar {
+    width: 10px; /* Largura da barra de rolagem vertical */
+    height: 50px; /* Altura da barra de rolagem horizontal */
+}
+
+::-webkit-scrollbar-track {
+    background: #f6f5d6eb; /* Cor de fundo do trilho */
+    border-radius: 1px; /* Borda arredondada para o trilho */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #a00303; /* Cor da barra de rolagem (o "arrastável") */
+    border-radius: 10px; /* Borda arredondada para o polegar */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #aa420ed7; /* Cor da barra de rolagem ao passar o mouse */
+}
+
+::-webkit-scrollbar-corner {
+    background: #cccccc; /* Cor do canto */
+}
+
+
+
+.banner-top{
+    width: 100vw;
+    height: 180px;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(255, 255, 255);
+    background-image: url(logosst.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    }
+
+.menu{
+    width: 100vw;
+    height: 35px;
+    margin-top: 10px;
+    padding: 0;
+    background-color: rgba(7, 2, 120, 0.438);
+    align-content: center;
+    text-align: center;
+        
+}
+
+.menu a{
+    padding: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Andale Mono, monospace;
+    color: rgb(255, 255, 255);
+}
+
+.menu a:hover{
+    color: rgb(255, 251, 0);
+}
+
+.box-content{
+    width: 100vw;
+    height: calc(100vh - 180px - 35px - 10px);
+    display: flex;
+    justify-content: space-between; /*ara distribuir o espaço de forma mais controlada */
+    align-items: flex-start; /* Alinha os itens ao topo do contêiner flexível */
+    gap: 10px;
+    padding: 20px 10px;
+    box-sizing: border-box; /* Garante que padding e borda sejam incluídos na largura/altura total */
+    overflow-x: hidden; /* Garante que o conteúdo que extrapola o box-content horizontalmente seja escondido */
+
+    
+}
+
+.menu-content{
+    height: 100%; 
+    width: 15vw;
+    background-color: rgba(7, 2, 120, 0.438);
+    font-family: Andale Mono, monospace;
+/* flex-basis: 15%; define a largura base inicial, sem overflow */
+    flex: 0 0 15vw; /* Não cresce, não encolhe, base de 10vw */
+    flex-shrink: 0; /* Impede que essas divs encolham */
+    overflow-y: auto;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+.menu-content h1{
+    margin-top: 50px;
+    text-align: center;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+}
+
+.menu-content li a{
+    font-size: 16px;
+    text-decoration: none;
+        font-weight: bold;
+    
+}
+
+.menu-content ul{
+    list-style-type: disc;
+    margin-top: 50px;
+
+}
+
+.menu-content a{
+    color: rgb(255, 255, 255);
+
+}
+
+.menu-content a:hover{
+    color: rgb(255, 251, 0);
+
+}
+
+.content{
+    height: 100%; 
+    background-color: aliceblue;
+    flex: 1;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    display: block;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow-y: auto;
+    clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 8% 0%, 0% 20%);
+
+}
+
+.content::before {
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Preto com 40% de opacidade */
+    z-index: -1; /* Coloca o overlay atrás do conteúdo */
+}
+
+.content table {
+    color: rgb(0, 0, 0); /* Cor do texto para contraste com o fundo escuro */
+    text-shadow: 1px 1px 2px rgba(12, 35, 1, 0.8); /* Sombra para legibilidade */
+    z-index: 2; /* Garante que o conteúdo textual esteja acima do overlay */
+}
+.content h1{
+    margin-top: 50px;
+    text-align: center;
+}
+
+.content h2{
+    margin-top: 50px;
+    text-align: center;
+}
+
+.content table{
+    width: 80%; 
+    border: 1px solid black;
+    border-collapse: collapse;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.content table tr, td, th {
+    border: 1px solid black;
+    padding: 8px; 
+}
+
+.content p{
+    margin-top: 20px;
+    background-color: yellow;
+    display: inline-block;    
+}
+
+
+.resume-content{
+    width: 20vw;
+    height: 100%; 
+    background-color: aliceblue;
+    flex: 0 0 20%;
+    flex-shrink: 0; /* Impede que essas divs encolham */
+    overflow-y: auto;
+}
