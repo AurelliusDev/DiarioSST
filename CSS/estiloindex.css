@@ -1,10 +1,11 @@
 html, body{
-    background-color: rgb(14, 71, 1);
+    background-color: #001238;
     padding: 0;
     margin: 0;
     height: 100%;
     overflow-x: hidden; /* Adicionado para garantir que nenhuma barra de rolagem horizontal apareça no body */
     scroll-behavior: smooth;
+    font-family: "Roboto", sans-serif;
 
 }
 
@@ -14,21 +15,21 @@ html, body{
 }
 
 ::-webkit-scrollbar-track {
-    background: #f6f5d6eb; /* Cor de fundo do trilho */
+    background: #000000eb; /* Cor de fundo do trilho */
     border-radius: 1px; /* Borda arredondada para o trilho */
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #a00303; /* Cor da barra de rolagem (o "arrastável") */
+    background: #c56a00;; /* Cor da barra de rolagem (o "arrastável") */
     border-radius: 10px; /* Borda arredondada para o polegar */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #aa420ed7; /* Cor da barra de rolagem ao passar o mouse */
+    background: #c56a00;; /* Cor da barra de rolagem ao passar o mouse */
 }
 
 ::-webkit-scrollbar-corner {
-    background: #cccccc; /* Cor do canto */
+    background: #ffffff; /* Cor do canto */
 }
 
 
@@ -39,10 +40,23 @@ html, body{
     margin: 0;
     padding: 0;
     background-color: rgb(255, 255, 255);
-    background-image: url(logosst.png);
+    background-image: url(background.png);
     background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
+    background-size: cover;
+    background-position: left;
+    display:grid;
+    }
+
+    .banner-top h1, h2 {
+        text-align: center;
+        margin: 0;
+        align-items: center;
+        font-family: "Cinzel", serif;
+        color: #8e008e;
+    }
+
+    .banner-top h1{
+        margin-top: 40px;
     }
 
 .menu{
@@ -50,7 +64,7 @@ html, body{
     height: 35px;
     margin-top: 10px;
     padding: 0;
-    background-color: rgba(7, 2, 120, 0.438);
+    background-color: #ffffff;
     align-content: center;
     text-align: center;
         
@@ -62,21 +76,21 @@ html, body{
     font-size: 16px;
     font-weight: bold;
     font-family: Andale Mono, monospace;
-    color: rgb(255, 255, 255);
+    color: #001238;
 }
 
 .menu a:hover{
-    color: rgb(255, 251, 0);
+    color: #c56a00;
 }
 
 .box-content{
     width: 100vw;
     height: calc(100vh - 180px - 35px - 10px);
     display: flex;
-    justify-content: space-between; /*ara distribuir o espaço de forma mais controlada */
-    align-items: flex-start; /* Alinha os itens ao topo do contêiner flexível */
+    justify-content: space-between; 
+    align-items: flex-start; 
     gap: 10px;
-    padding: 20px 10px;
+    padding: 20px;
     box-sizing: border-box; /* Garante que padding e borda sejam incluídos na largura/altura total */
     overflow-x: hidden; /* Garante que o conteúdo que extrapola o box-content horizontalmente seja escondido */
 
@@ -86,7 +100,7 @@ html, body{
 .menu-content{
     height: 100%; 
     width: 15vw;
-    background-color: rgba(7, 2, 120, 0.438);
+    background-color: #000000;
     font-family: Andale Mono, monospace;
 /* flex-basis: 15%; define a largura base inicial, sem overflow */
     flex: 0 0 15vw; /* Não cresce, não encolhe, base de 10vw */
@@ -94,42 +108,52 @@ html, body{
     overflow-y: auto;
     overflow-x: hidden;
     text-align: center;
+    border-radius: 5%;
 }
 
 .menu-content h1{
     margin-top: 50px;
     font-size: 25px;
     text-align: center;
+    font-family: "Cinzel", serif;
     justify-content: center;
-    color: rgb(255, 255, 255);
+    color: #c56a00;
+    background-image: url(paper.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.menu-content li a{
-    font-size: 16px;
-    text-decoration: none;
-        font-weight: bold;
-    
+.menu-content p {
+    margin: 0;
+    padding: 1.5%;
+    background-color: transparent;
+    transition: all 0.3s ease;
 }
 
-.menu-content ul{
-    list-style-type: disc;
-    margin-top: 50px;
+.menu-content p:hover{
+    background-color: #c56a00;
 
 }
 
 .menu-content a{
     color: rgb(255, 255, 255);
-
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: bold;
+ 
 }
 
 .menu-content a:hover{
-    color: rgb(255, 251, 0);
-
+    color: #000000;
 }
 
 .content{
     height: 100%; 
-    background-color: aliceblue;
+    background-image: url(paper.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     flex: 1;
     align-items: center;
     align-content: center;
@@ -138,7 +162,7 @@ html, body{
     flex-direction: column;
     justify-content: flex-start;
     overflow-y: auto;
-    clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 8% 0%, 0% 20%);
+    clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 4% 0%, 0% 15%);
 
 }
 
@@ -153,6 +177,7 @@ html, body{
 }
 
 .content table {
+    background-color: #f4f3ebd4;
     color: rgb(0, 0, 0);
     z-index: 2; /* Garante que o conteúdo textual esteja acima do overlay */
     width: 80%; 
@@ -160,34 +185,50 @@ html, body{
     border-collapse: collapse;
     justify-content: center;
     margin: 0 auto;
+    font-family: "Roboto", sans-serif;
 }
+
+.content table tr{
+    background-color: transparent;
+}
+
+.content table tr:hover{
+    background-color: #ffffff;
+}
+
 .content h1{
-    margin-top: 50px;
+    margin-top: 100px;
     text-align: center;
-    background-color: rgb(0, 53, 71);
+    font-family: "Cinzel", serif;
+    background-color: #001238;
     color: #ffffff;
     padding: 10px;
 }
 
-.content h2{
+caption{
     margin-top: 50px;
     margin-bottom: 0;
     padding: 5px 15px;
     text-align: center;
-    background-color: rgb(0, 53, 71);
-    color: #ffffff;
-    display: inline-block;   
+    font-weight: bold;
+    font-size: large;
+    font-family: "Montserrat", sans-serif;
+    background-color: #c56a00;
+    color: rgb(255, 255, 255); 
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
 .content table tr, td, th {
     border: 1px solid black;
     padding: 8px; 
+    font-family: "Roboto", sans-serif;
 }
 
 .content th{
     font-weight: bold;
     font-size: 16px;
-    background-color: rgb(0, 53, 71);
+    background-color: #001238;
     color: #ffffff;
     
 }
@@ -202,6 +243,9 @@ html, body{
     margin-top: 20px;
     background-color: yellow;
     display: inline-block;    
+    font-weight: bold;
+    padding: 5px;
+    border: 1px dashed black;
 }
 
 .content a{
@@ -220,10 +264,51 @@ html, body{
 
 
 .resume-content{
+    position: relative;
     width: 20vw;
     height: 100%; 
-    background-color: aliceblue;
+    background-color: rgba(49, 2, 91, 0.474);
+    background-position: center;
+    background-size: cover;
     flex: 0 0 20%;
     flex-shrink: 0; /* Impede que essas divs encolham */
     overflow-y: auto;
+    font-family: "Roboto", sans-serif;
+    border-radius: 5%;
+}
+
+.resume-content div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0; /* Todas as imagens começam invisíveis */
+    animation: fade-in-out 15s infinite; /* Duração total da animação (ex: 15s = 5s por imagem) */
+    transition: opacity 1s ease-in-out;
+}
+
+.resume-content .imagem-1{
+    background-image: url(Agosto-lilas.png);
+    animation-delay: 0s; /* Começa imediatamente */
+}
+
+.resume-content .imagem-2{
+    background-image: url(AGOSTO\ LILAS\ 2.png);
+    animation-delay: 5s; /* Começa após 5 segundos */
+}
+
+.resume-content .imagem-3{
+    background-image: url(AGOSTO\ LILÁS\ 3.png);
+    animation-delay: 10s; /* Começa após 10 segundos */
+}
+
+@keyframes fade-in-out {
+    0% { opacity: 0; }
+    10% { opacity: 1; } /* A imagem aparece */
+    30% { opacity: 1; } /* A imagem permanece visível */
+    43% { opacity: 0; } /* A imagem começa a sumir */
+    100% { opacity: 0; }
 }
