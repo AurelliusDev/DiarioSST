@@ -1,0 +1,265 @@
+html, body {
+    background-color: #001238;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    font-family: "Roboto", sans-serif;
+}
+
+/* Estilos para a barra de rolagem */
+::-webkit-scrollbar { width: 10px; height: 8px; }
+::-webkit-scrollbar-track { background: #000000eb; border-radius: 1px; }
+::-webkit-scrollbar-thumb { background: #c56a00; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #c56a00; }
+::-webkit-scrollbar-corner { background: #ffffff; }
+
+/* Estilos globais */
+* { box-sizing: border-box; }
+p { margin: 0; } /* Resetando a margem dos p's para maior controle */
+
+/* Banners de topo */
+.banner-top {
+    width: 100%;
+    height: 180px;
+    background-color: #ffffff;
+    background-image: url(../img/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex; /* Usando flexbox para alinhar */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #8e008e;
+}
+
+/* Menu de navegação */
+.menu {
+    width: 100%;
+    height: 35px;
+    margin-top: 10px;
+    background-color: #ffffffe4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu a {
+    padding: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Andale Mono, monospace;
+    color: #001238;
+}
+
+.menu a:hover { color: #c56a00; }
+
+/* Conteúdo principal (três colunas) */
+.box-content {
+    width: 100%;
+    height: calc(100vh - 180px - 35px - 10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 20px;
+}
+
+.menu-content {
+    width: 15vw;
+    height: 100%;
+    background-color: #000000;
+    font-family: Andale Mono, monospace;
+    flex-basis: 15vw;
+    flex-shrink: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    text-align: center;
+    border-radius: 5%;
+}
+
+.menu-content h1 {
+    margin-top: 50px;
+    font-size: 25px;
+    font-family: "Cinzel", serif;
+    color: #c56a00;
+    background-color: #ffffffe4;
+}
+
+.menu-content p {
+    margin: 0;
+    padding: 1.5%;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.menu-content p:hover { background-color: #c56a00; }
+
+.menu-content a {
+    color: #ffffff;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu-content a:hover { color: #000000; }
+
+.content {
+    width: 100%;
+    height: 100%;
+
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 4% 0%, 0% 15%);
+    position: relative; /* Adicionado para que o ::before funcione */
+    background-color: #ffffff;
+}
+
+/* Pseudo-elemento no .content corrigido */
+.content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.content img{
+    height: 150px;
+    width: auto;
+    position: fixed;
+    z-index: 3;
+
+}
+
+.content h1 {
+    margin-top: 140px;
+    text-align: center;
+    font-family: "Cinzel", serif;
+    background-color: #001238;
+    color: #ffffff;
+    padding: 10px;
+}
+
+.content table {
+    background-color: #ffffff92;
+    color: #000000;
+    z-index: 2;
+    width: 80%;
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: 0 auto; /* Centraliza a tabela */
+    font-family: "Roboto", sans-serif;
+}
+
+.content p {
+    font-size: 17px;
+    text-align: justify;
+    margin: 3%;
+}
+
+.content table tr:hover { 
+    background-color: #fb7e0989;
+ }
+
+caption {
+    margin-top: 50px;
+    padding: 5px 15px;
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+    font-family: "Montserrat", sans-serif;
+    background-color: #c56a00;
+    color: #ffffff;
+    border-radius: 15px 15px 0 0;
+}
+
+.content table tr, td, th {
+    border: 1px solid black;
+    padding: 8px;
+    font-family: "Roboto", sans-serif;
+}
+
+.content th {
+    font-weight: bold;
+    font-size: 16px;
+    background-color: #001238;
+    color: #ffffff;
+}
+
+.OBS {
+    margin-top: 20px;
+    background-color: yellow;
+    display: inline-block;
+    font-weight: bold;
+    padding: 5px;
+    border: 1px dashed black;
+}
+
+.content a {
+    padding: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000000;
+}
+
+.content a:hover { color:#ffffff; }
+
+.resume-content {
+    position: relative;
+    width: 20vw;
+    height: 100%;
+    background-color: rgba(49, 2, 91, 0.474);
+    background-position: center;
+    background-size: cover;
+    flex: 0 0 20%;
+    flex-shrink: 0;
+    overflow-y: auto;
+    font-family: "Roboto", sans-serif;
+    border-radius: 5%;
+}
+
+.resume-content div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: fade-in-out 15s infinite;
+    transition: opacity 1s ease-in-out;
+}
+
+.resume-content .imagem-1 {
+    background-image: url(../img/Agosto-lilas.png); /* Caminho corrigido */
+    animation-delay: 0s;
+}
+
+.resume-content .imagem-2 {
+    background-image: url(../img/AGOSTO\ LILAS\ 2.png LILAS\ 2.png); /* Caminho corrigido */
+    animation-delay: 3s;
+}
+
+.resume-content .imagem-3 {
+    background-image: url(../img/AGOSTO\ LILÁS\ 3.png); /* Caminho corrigido */
+    animation-delay: 5s;
+}
+
+@keyframes fade-in-out {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    30% { opacity: 1; }
+    43% { opacity: 1; }
+    100% { opacity: 0; }
+}
